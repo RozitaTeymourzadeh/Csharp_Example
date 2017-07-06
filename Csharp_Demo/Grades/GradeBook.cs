@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Grades
 {
-    class GradeBook
+    public class GradeBook
     {
         public GradeBook()// type ctor (constructor) to get initialize constructor, Only initial costructor does have return type and the name is the same of class
         {

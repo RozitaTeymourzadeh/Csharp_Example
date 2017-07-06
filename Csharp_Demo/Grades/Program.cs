@@ -1,8 +1,9 @@
-﻿/* This program takes student grades and conduct statistical aanalysis on those grades */
+﻿/* This program takes student grades and conduct statistical analysis on those grades */
 
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Speech.Synthesis;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -12,6 +13,8 @@ namespace Grades
     {
         static void Main(string[] args)
         {
+            SpeechSynthesizer synth = new SpeechSynthesizer();
+            synth.Speak("Hello! This program takes student grades and conduct statistical analysis on those grades!Add student grade in main program! here you go!!");
             GradeBook book = new GradeBook();
             book.AddGrade(12.3f);
             book.AddGrade(18.0f);
