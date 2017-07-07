@@ -8,7 +8,7 @@ namespace Grades
 {
     public class GradeBook
     {
-        public GradeBook()// type ctor (constructor) to get initialize constructor, Only initial costructor does have return type and the name is the same of class
+        public GradeBook()// type ctor (constructor) to get initialize constructor, Only initial costructor does have return type and the name is the same of class. 
         {
             grades = new List<float>();
         }
@@ -30,8 +30,10 @@ namespace Grades
         {
             grades.Add(grade);
         }
-        //List<float> grades = new List<float>();// add this line to initialize instructor
+        //List<float> grades = new List<float>();/* add this line to initialize instructor
+        /*public variable starts with capital letter and private variable start in small letter*/
         private List<float> grades;
+        public string Name;
     }
 
     
