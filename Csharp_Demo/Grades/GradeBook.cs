@@ -32,8 +32,23 @@ namespace Grades
         }
         //List<float> grades = new List<float>();/* add this line to initialize instructor
         /*public variable starts with capital letter and private variable start in small letter*/
-        private List<float> grades;
-        public string Name;
+        private List<float> grades;//field
+
+        private string _name;//property
+        public string Name 
+        {
+            get
+            {
+                return _name;
+            }
+            set
+            {
+                if(!String.IsNullOrEmpty(value))
+                {
+                    _name = value;
+                }
+            }
+        }
     }
 
     
