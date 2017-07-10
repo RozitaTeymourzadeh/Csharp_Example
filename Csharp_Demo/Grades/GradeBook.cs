@@ -10,6 +10,7 @@ namespace Grades
     {
         public GradeBook()// type ctor (constructor) to get initialize constructor, Only initial costructor does have return type and the name is the same of class. 
         {
+            _name = "Empty";
             grades = new List<float>();
         }
         public GradeStatistics ComputeStatistics()// here return type is "GradeStatistics"
@@ -30,11 +31,6 @@ namespace Grades
         {
             grades.Add(grade);
         }
-        //List<float> grades = new List<float>();/* add this line to initialize instructor
-        /*public variable starts with capital letter and private variable start in small letter*/
-        private List<float> grades;//field
-
-        private string _name;//property, property is used for bounding and serialization not field
         public string Name 
         {
             get
@@ -45,10 +41,20 @@ namespace Grades
             {
                 if(!String.IsNullOrEmpty(value))
                 {
+                    if(_name != value)
+                    {
+                        NameChanged(_name, value);
+                    }
                     _name = value;
                 }
             }
         }
+
+        public NameChangedDelegate NameChanged;
+        //List<float> grades = new List<float>();/* add this line to initialize instructor
+        /*public variable starts with capital letter and private variable start in small letter*/
+        private List<float> grades;//field
+        private string _name;//property, property is used for bounding and serialization not field
     }
 
     
