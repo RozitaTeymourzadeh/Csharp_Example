@@ -16,8 +16,12 @@ namespace Grades
             SpeechSynthesizer synth = new SpeechSynthesizer();
             synth.Speak("Hello! This program takes student grades and conduct statistical analysis on those grades!Add student grade in main program! here you go!!");
             GradeBook book = new GradeBook();
-            book.NameChanged = new NameChangedDelegate(OnNameChanged);
+
+            book.NameChanged += OnNameChanged;
+
+
             book.Name = "Student Property";
+            book.Name = "Student Property as a book name";
             book.AddGrade(12.3f);
             book.AddGrade(18.0f);
             book.AddGrade(20.0f);
@@ -33,9 +37,9 @@ namespace Grades
         }
 
         /* Since WriteResult Method is going to be addressed by static Main method , it should be defined as static as well */
-        static void OnNameChanged(string existingName, string newName)// To be invoke by delegate
+        static void OnNameChanged(object sender, NameChangedEventArgs args)// To be invoke by delegate
         {
-            Console.WriteLine($"Grade book changing name from {existingName} to {newName}");
+            Console.WriteLine($"Grade book is changing name from {args.ExistingName} to {args.NewName}");
         }
         static void WriteResult(string description, float result)
         {

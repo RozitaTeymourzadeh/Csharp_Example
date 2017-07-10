@@ -43,14 +43,17 @@ namespace Grades
                 {
                     if(_name != value)
                     {
-                        NameChanged(_name, value);
+                        NameChangedEventArgs args = new NameChangedEventArgs();
+                        args.ExistingName = _name;
+                        args.NewName = value;
+                        NameChanged(this, args);// this is referring to all elements in this grade. you can see those by typing "this."
                     }
                     _name = value;
                 }
             }
         }
 
-        public NameChangedDelegate NameChanged;
+        public event NameChangedDelegate NameChanged;
         //List<float> grades = new List<float>();/* add this line to initialize instructor
         /*public variable starts with capital letter and private variable start in small letter*/
         private List<float> grades;//field
