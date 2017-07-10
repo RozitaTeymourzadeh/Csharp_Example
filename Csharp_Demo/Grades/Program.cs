@@ -17,14 +17,14 @@ namespace Grades
             synth.Speak("Hello! This program takes student grades and conduct statistical analysis on those grades!Add student grade in main program! here you go!!");
             GradeBook book = new GradeBook();
 
-            book.NameChanged += OnNameChanged;
+            book.NameChanged += OnNameChanged;// subscribe to event 
 
 
             book.Name = "Student Property";
             book.Name = "Student Property as a book name";
-            book.AddGrade(12.3f);
-            book.AddGrade(18.0f);
-            book.AddGrade(20.0f);
+            book.AddGrade(91);
+            book.AddGrade(89.5f);
+            book.AddGrade(75);
 
             GradeBook book2 = book; // this type of assignment point to the same address in memory for book2
 
@@ -33,6 +33,7 @@ namespace Grades
             WriteResult("Highest Value",stats.HighestGrade);// snip "cw"
             WriteResult("Lowest Value", (int)stats.LowestGrade);// snip "cw"
             WriteResult("Average Value", stats.AverageGrade);// snip "cw"
+            WriteResult("Grade",stats.LetterGrade);
             Console.ReadLine();
         }
 
@@ -41,10 +42,14 @@ namespace Grades
         {
             Console.WriteLine($"Grade book is changing name from {args.ExistingName} to {args.NewName}");
         }
+        static void WriteResult(string description, string result)
+        {
+            Console.WriteLine($"{description}: {result}");
+        }
         static void WriteResult(string description, float result)
         {
            // Console.WriteLine(description + " : " + result);
-            Console.WriteLine($"{description}:{result:C}");
+            Console.WriteLine($"{description}:{result:F2}");
         }
         static void WriteResult(string description, int result)
         {
