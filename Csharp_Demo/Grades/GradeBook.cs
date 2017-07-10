@@ -34,7 +34,7 @@ namespace Grades
         /*public variable starts with capital letter and private variable start in small letter*/
         private List<float> grades;//field
 
-        private string _name;//property
+        private string _name;//property, property is used for bounding and serialization not field
         public string Name 
         {
             get
