@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,6 +28,15 @@ namespace Grades
 
             return stats;
         }
+
+        public void WriteGrades(TextWriter destination)// "@out" @ is there to convert out keyword to normal variable
+        {
+            for (int i = 0; i < grades.Count; i++)
+            {
+                destination.WriteLine(grades[i]);
+            }
+        }
+
         public void AddGrade(float grade)
         {
             grades.Add(grade);

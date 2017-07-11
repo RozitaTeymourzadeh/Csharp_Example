@@ -25,6 +25,7 @@ namespace Grades
             book.AddGrade(91);
             book.AddGrade(89.5f);
             book.AddGrade(75);
+            book.WriteGrades(Console.Out);
 
             GradeBook book2 = book; // this type of assignment point to the same address in memory for book2
 
