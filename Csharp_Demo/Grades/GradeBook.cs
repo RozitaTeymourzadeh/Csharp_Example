@@ -49,9 +49,12 @@ namespace Grades
             }
             set
             {
-                if(!String.IsNullOrEmpty(value))
+                if (String.IsNullOrEmpty(value))
                 {
-                    if(_name != value)
+                    throw new ArgumentException("Name can not be null or empty!!");
+                }
+
+                    if (_name != value && NameChanged != null)
                     {
                         NameChangedEventArgs args = new NameChangedEventArgs();
                         args.ExistingName = _name;
@@ -59,7 +62,7 @@ namespace Grades
                         NameChanged(this, args);// this is referring to all elements in this grade. you can see those by typing "this."
                     }
                     _name = value;
-                }
+                
             }
         }
 

@@ -19,6 +19,19 @@ namespace Grades
 
             book.NameChanged += OnNameChanged;// subscribe to event 
 
+            try
+            {
+                Console.WriteLine("Enter a Book name");
+                book.Name = Console.ReadLine();
+            }
+            catch (ArgumentException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Something went wrong!");
+            }
 
             book.Name = "Student Property";
             book.Name = "Student Property as a book name";
