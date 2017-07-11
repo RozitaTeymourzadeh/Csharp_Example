@@ -33,7 +33,7 @@ namespace Grades
             WriteResult("Highest Value",stats.HighestGrade);// snip "cw"
             WriteResult("Lowest Value", (int)stats.LowestGrade);// snip "cw"
             WriteResult("Average Value", stats.AverageGrade);// snip "cw"
-            WriteResult("Grade",stats.LetterGrade);
+            WriteResult(stats.Description,stats.LetterGrade);
             Console.ReadLine();
         }
 
